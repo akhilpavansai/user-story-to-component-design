@@ -1,7 +1,7 @@
 import React from "react";
 
-const Tabs = () => {
-  return <div>Tabs</div>;
+const Tabs = ({ data }) => {
+  return <>{/* map data and render tabs and content */}</>;
 };
 
 export default Tabs;

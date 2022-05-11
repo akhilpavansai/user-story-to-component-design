@@ -1,7 +1,17 @@
 import React from "react";
+import Button from "../../atoms/Button";
+import Tabs from "../../molecules/Tabs";
 
-const ExploreMenu = () => {
-  return <div>ExploreMenu</div>;
+const ExploreMenu = ({ data }) => {
+  return (
+    <>
+      <Button variant={""} onclick={undefined}>
+        Explore
+      </Button>
+      {/* displays list of options available */}
+      <Tabs data={data} />
+    </>
+  );
 };
 
 export default ExploreMenu;
