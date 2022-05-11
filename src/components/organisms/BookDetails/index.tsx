@@ -1,10 +1,16 @@
 import { Box, Grid, styled, Tabs, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import Image from "../../atoms/Image";
 
 const BookDetailThumbnail = styled(Box)({});
 
 const BookDetails = () => {
+  const data = getBookDetails();
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [dialogClose, setDialogClose] = useState(false);
+  const handleAddToLibrary = () => {};
+  const handleBuy = () => {};
+  const handleSendToKindle = () => {};
   return (
     <>
       <Grid>

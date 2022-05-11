@@ -5,6 +5,9 @@ const PrimaryModal = styled(Grid)({});
 const SecondaryModal = styled(Grid)({});
 
 const Modal = ({ variant }) => {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   if (variant == "primary") {
     return (
       <PrimaryModal>
