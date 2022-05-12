@@ -12,8 +12,7 @@ const ExploreMenu = ({ data }) => {
       <Button variant={""} onclick={handleClick}>
         Explore
       </Button>
-      {/* displays list of options available */}
-      <Tabs data={data} />
+      {open ? <Tabs data={data} /> : <></>}
     </>
   );
 };
