@@ -1,8 +1,11 @@
-import { Grid, styled } from "@mui/material";
+import { Button, styled, Typography } from "@mui/material";
+import MuiModal from "@mui/material/Modal";
+import TextField from "../../atoms/TextField";
+import Image from "../../atoms/Image";
 import React from "react";
 
-const PrimaryModal = styled(Grid)({});
-const SecondaryModal = styled(Grid)({});
+const PrimaryModal = styled(MuiModal)({});
+const SecondaryModal = styled(MuiModal)({});
 
 const Modal = ({ variant }) => {
   const [open, setOpen] = React.useState(false);
@@ -10,14 +13,32 @@ const Modal = ({ variant }) => {
   const handleClose = () => setOpen(false);
   if (variant == "primary") {
     return (
-      <PrimaryModal>
-        {/* contains text with text field and buttons to add kindle account */}
+      <PrimaryModal open={false}>
+        <>
+          <Typography>heading</Typography>
+          <Typography>description</Typography>
+          <Typography>point1</Typography>
+          <Typography>precautions</Typography>
+          <Typography>sub heading</Typography>
+          <TextField placeholder={"email"} onChange={undefined} />
+          <Button variant="contained" onClick={undefined}>
+            Add email
+          </Button>
+          <Button variant="text" onClick={undefined}>
+            Need help?
+          </Button>
+        </>
       </PrimaryModal>
     );
   } else if (variant == "secondary") {
     {
-      <SecondaryModal>
-        {/* contains text and button for continue reading  */}
+      <SecondaryModal open={false}>
+        <>
+          <Image imgSrc={"tick.png"} />
+          <Typography>heading</Typography>
+          <Typography>description</Typography>
+          <Button onClick={undefined}>Continue reading</Button>
+        </>
       </SecondaryModal>;
     }
   } else {
