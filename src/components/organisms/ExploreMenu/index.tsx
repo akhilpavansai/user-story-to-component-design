@@ -3,13 +3,16 @@ import Button from "../../atoms/Button";
 import Tabs from "../../molecules/Tabs";
 
 const ExploreMenu = ({ data }) => {
+  const [open, setOpen] = React.useState(false);
+  const handleClick = () => {
+    setOpen((prevValue) => !prevValue);
+  };
   return (
     <>
-      <Button variant={""} onclick={undefined}>
+      <Button variant={""} onclick={handleClick}>
         Explore
       </Button>
-      {/* displays list of options available */}
-      <Tabs data={data} />
+      {open ? <Tabs data={data} /> : <></>}
     </>
   );
 };

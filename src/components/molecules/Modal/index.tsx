@@ -7,11 +7,16 @@ import React from "react";
 const PrimaryModal = styled(MuiModal)({});
 const SecondaryModal = styled(MuiModal)({});
 
-const Modal = ({ variant }) => {
+const Modal = ({ variant, isPrimaryOpen, isSecondaryOpen }) => {
+  const [primaryOpen, setPrimaryOpen] = React.useState(isPrimaryOpen);
+  const handlePrimaryClose = () => setOpen(false);
+  const [secondaryOpen, setSecondaryOpen] = React.useState(isSecondaryOpen);
+  const handleSecondaryClose = () => setOpen(false);
   if (variant == "primary") {
     return (
-      <PrimaryModal open={false}>
+      <PrimaryModal open={handlePrimaryClose}>
         <>
+          <button onClick={handleClose}>close</button>
           <Typography>heading</Typography>
           <Typography>description</Typography>
           <Typography>point1</Typography>
@@ -31,6 +36,7 @@ const Modal = ({ variant }) => {
     {
       <SecondaryModal open={false}>
         <>
+          <button onClick={handleSecondaryClose}>close</button>
           <Image imgSrc={"tick.png"} />
           <Typography>heading</Typography>
           <Typography>description</Typography>
